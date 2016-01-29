@@ -78,16 +78,24 @@
 		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
 		<form id="search_salon" action="" method="post">
 			<select name="arrond" class="styled_form styled_select white">
-				<option>Arrondissement</option>
-				<option>1er arrondissement</option>
-				<option>2eme arrondissment</option>
+<option>Arrondissement</option>
+				<option>2eme arrondissement</option>
+				<option>4eme arrondissment</option>
+                <option>11eme arrondissment</option>
+                <option>15eme arrondissment</option>
 			</select>
 			<select name="style" class="styled_form styled_select white">
 				<option>Style(s)</option>
 				<option>Tribal</option>
 				<option>Asiatique</option>
 				<option>Dot Work</option>
-			</select>
+                <option>Old School</option>
+                <option>New School</option>
+                <option>Lettrage</option>
+                <option>Réaliste/Portrait</option>
+                <option>Abstrait/Minimaliste</option>
+                <option>Biomécanique</option>
+            </select>
 			<input class="styled_form" type="text" id="text_form" placeholder="Tatoueur...">
 			<button class="styled_form" id="button" type="submit" value="Trouver un salon">Trouver un salon</button>
 		</form>
