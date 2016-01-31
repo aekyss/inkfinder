@@ -76,7 +76,7 @@
 	</header>
 	<section id="search_sect">
 		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
-		<form id="search_salon" action="" method="post">
+		<form id="search_salon" action="search_s.php" method="post">
 			<select name="arrond" class="styled_form styled_select white">
 <option>Arrondissement</option>
 				<option>2eme arrondissement</option>
