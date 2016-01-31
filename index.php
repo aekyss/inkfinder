@@ -78,26 +78,26 @@
 		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
 		<form id="search_salon" action="search_s.php" method="post">
 			<select name="arrond" class="styled_form styled_select white">
-<option>Arrondissement</option>
-				<option>2eme arrondissement</option>
-				<option>4eme arrondissment</option>
-                <option>11eme arrondissment</option>
-                <option>15eme arrondissment</option>
+                <option>Arrondissement</option>
+				<option value="2">2eme arrondissement</option>
+				<option value="4">4eme arrondissment</option>
+                <option value="11">11eme arrondissment</option>
+                <option value="15">15eme arrondissment</option>
 			</select>
 			<select name="style" class="styled_form styled_select white">
 				<option>Style(s)</option>
-				<option>Tribal</option>
-				<option>Asiatique</option>
-				<option>Dot Work</option>
-                <option>Old School</option>
-                <option>New School</option>
-                <option>Lettrage</option>
-                <option>Réaliste/Portrait</option>
-                <option>Abstrait/Minimaliste</option>
-                <option>Biomécanique</option>
+				<option value="tribal">Tribal</option>
+				<option value="asiatique">Asiatique</option>
+				<option value="dot work">Dot Work</option>
+                <option value="old school">Old School</option>
+                <option value="new school">New School</option>
+                <option value="lettrage">Lettrage</option>
+                <option value="réaliste">Réaliste/Portrait</option>
+                <option value="abstrait">Abstrait/Minimaliste</option>
+                <option value="bioméca">Biomécanique</option>
             </select>
 			<input class="styled_form" type="text" id="text_form" placeholder="Tatoueur...">
-			<button class="styled_form" id="button" type="submit" value="Trouver un salon">Trouver un salon</button>
+			<input class="styled_form" id="button" type="submit" value="Trouver un salon">
 		</form>
 	</section>
 	<section id="new_salons">
