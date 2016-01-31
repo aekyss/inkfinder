@@ -76,21 +76,26 @@
 	</header>
 	<section id="search_sect">
 		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
+        	<?php
+					//si login ou mot de passe faux
+					if(isset($_GET['error']))
+						echo "<p>Remplissez le(s) champs manquant(s)</p><br/>\n";
+				?>
 		<form id="search_salon" action="search_s.php" method="post">
 			<select name="arrond" class="styled_form styled_select white">
-                <option>Arrondissement</option>
+                <option value="0">Arrondissement</option>
 				<option value="2">2eme arrondissement</option>
 				<option value="4">4eme arrondissment</option>
                 <option value="11">11eme arrondissment</option>
                 <option value="15">15eme arrondissment</option>
 			</select>
 			<select name="style" class="styled_form styled_select white">
-				<option>Style(s)</option>
+				<option value="vide">Style(s)</option>
 				<option value="tribal">Tribal</option>
 				<option value="asiatique">Asiatique</option>
-				<option value="dot work">Dot Work</option>
-                <option value="old school">Old School</option>
-                <option value="new school">New School</option>
+				<option value="dotwork">Dot Work</option>
+                <option value="oldschool">Old School</option>
+                <option value="newschool">New School</option>
                 <option value="lettrage">Lettrage</option>
                 <option value="réaliste">Réaliste/Portrait</option>
                 <option value="abstrait">Abstrait/Minimaliste</option>
@@ -98,7 +103,7 @@
             </select>
 			<input class="styled_form" type="text" id="text_form" placeholder="Tatoueur...">
 			<input class="styled_form" id="button" type="submit" value="Trouver un salon">
-		</form>
+		</form>   
 	</section>
 	<section id="new_salons">
 		<h4>Les derniers salons ajoutés :</h4>
