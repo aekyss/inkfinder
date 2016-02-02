@@ -109,7 +109,18 @@
 			</ul>
 			<div class="cd-fail-message">No results found</div>
 		</section> <!-- cd-gallery -->
-
+       
+        <script>
+            jQuery(document).ready(function($){                   
+            var loadFilter = '.check23';
+                    $('.cd-gallery ul').mixItUp({
+                    load: {
+                      filter: loadFilter // pass it to MixItUp when you instantiate
+                       }
+                });                        
+            });
+        </script>
+         
 		<div class="cd-filter">
 			<form>
 				<div class="cd-filter-block">
@@ -184,7 +195,7 @@
 							</li>
 							<li>
 
-								<input  class="filter" data-filter=".check23" type="checkbox" id="checkbox23"/>	
+								<input  class="filter" data-filter=".check23" type="checkbox" id="checkbox23" checked ="checked"/>	
 								<label class="checkbox-label" for="checkbox23">
 
 									Asiatique
