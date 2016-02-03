@@ -50,8 +50,8 @@
 		<nav id="header_nav">
 			<ul id="menu_header">
 				<li ><a class="hvr-overline-reveal" href="index.php">Accueil</a></li>
-				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
-				<li id="current"><a href="page_galerie.php">Galerie</a></li>
+				<li ><a id="current" href="page_all_salons.php">Salon</a></li>
+				<li class="hvr-overline-reveal"><a href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_info_pratique.php">Infos</a></li>
 			</ul>
@@ -101,8 +101,13 @@
 			</ul>
 		</nav>
 	</header>
-	<section id="container">
-		<h1 class="nom_salon">Hand In Glove Tattoo</h1>
+    <?php
+        include_once("connexion.inc");//connexion à la BD
+        $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
+        $result = $req->fetch();
+    ?>
+	<section id="container">        
+		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
 		<ul class="description_salon">
 			<li class="logo_salon">
 				<figure><img src="img/logo_salon/handinglove_logo.jpg"></figure>
@@ -112,11 +117,11 @@
 					<tbody>
 						<tr>
 							<th>Nom du salon :</th> 
-							<td>Hand In Glove</td>
+							<td><?php echo $result['nom_salon']; ?></td>
 						</tr>
 						<tr>
 							<th>Adresse :</th>   
-							<td>44 Rue Trousseau, 75011 Paris</td>
+							<td><?php echo $result['adresse']; ?>, 750<?php echo $result['arrond']; ?> Paris</td>
 						</tr>
 						<tr>
 							<th>Téléphone :</th>  
