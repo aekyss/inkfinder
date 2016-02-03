@@ -81,7 +81,7 @@
 					if(isset($_GET['error']))
 						echo "<p>Remplissez le(s) champs manquant(s)</p><br/>\n";
 				?>
-		<form id="search_salon" action="search_s.php" method="post">
+		<form id="search_salon" action="page_all_salons.php" method="post">
 			<select name="arrond" class="styled_form styled_select white">
                 <option value="0">Arrondissement</option>
 				<option value="2">2eme arrondissement</option>

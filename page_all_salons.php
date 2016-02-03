@@ -89,39 +89,39 @@
 			<ul id="galerie_salon">
 				<h2 class="nom_tatoueurs">Tous les salons</h2>
 
-				<li class="mix color-1 check11 check21 check23 check25 check26 check27 option3"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></li>
+				<li class="mix color-1 check11 check21 check-asiatique check25 check26 check27 option3"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></li>
 
 				<!--<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/mysterytattoo.png" alt="Image 1"></li>
 
 
 				<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/starasian.png" alt="Image 1"></li>-->
 
-				<li class="mix color-1 check4 check22 check23 check28 radio2 option3"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></li>
+				<li class="mix color-1 check4 check22 check-asiatique check28 radio2 option3"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></li>
 
 				<li class="mix color-1 check4 check25 check29 radio2 option3"><img src="img/logo_salon/labetehumaine_logo.jpg" alt="Image 3"></li>
 
-				<li class="mix color-1 check15 check21 check22 check23 check24 check25 check27 check28  radio2 option3"><img src="img/logo_salon/mattattoo_logo.jpg" alt="Image 4"></li>
+				<li class="mix color-1 check15 check21 check22 check-asiatique check24 check25 check27 check28  radio2 option3"><img src="img/logo_salon/mattattoo_logo.jpg" alt="Image 4"></li>
 
-				<li class="mix color-1 check2 check21 check22 check23 check24 check25 check26 check28 check29 radio2 option3"><img src="img/logo_salon/artcorpus_logo.jpg" alt="Image 5"></li>
+				<li class="mix color-1 check2 check21 check22 check-asiatique check24 check25 check26 check28 check29 radio2 option3"><img src="img/logo_salon/artcorpus_logo.jpg" alt="Image 5"></li>
 
 				<li class="mix color-1 check11 check21 check24 radio2 option3"><img src="img/logo_salon/chezmeme_logo.jpg" alt="Image 6"></li>			
 
 			</ul>
 			<div class="cd-fail-message">No results found</div>
 		</section> <!-- cd-gallery -->
-       
-        <script>
-            jQuery(document).ready(function($){                   
-            var loadFilter = '.check23';
-                    $('.cd-gallery ul').mixItUp({
+
+		<div class="cd-filter">
+            
+       <?php include_once ('search_s.php'); ?><!--recherche dans le BD - résultat retourné -->
+           <script>
+            jQuery(document).ready(function($){    //tri au chargement de la page     
+                $('.cd-gallery ul').mixItUp({
                     load: {
                       filter: loadFilter // pass it to MixItUp when you instantiate
                        }
-                });                        
+                });            
             });
         </script>
-         
-		<div class="cd-filter">
 			<form>
 				<div class="cd-filter-block">
 					<h4>Rechercher par arrondissement :</h4>
@@ -195,8 +195,8 @@
 							</li>
 							<li>
 
-								<input  class="filter" data-filter=".check23" type="checkbox" id="checkbox23" checked ="checked"/>	
-								<label class="checkbox-label" for="checkbox23">
+								<input  class="filter" data-filter=".check-asiatique" type="checkbox" id="checkbox-asiatique"/>	
+								<label class="checkbox-label" for="checkbox-asiatique">
 
 									Asiatique
 
