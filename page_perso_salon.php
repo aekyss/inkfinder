@@ -125,19 +125,19 @@
 						</tr>
 						<tr>
 							<th>Téléphone :</th>  
-							<td>01 71 50 24 18</td>
+							<td><?php echo $result['tel'];?></td>
 						</tr>
 						<tr>
 							<th>Heures d'ouverture :</th>
-							<td>Du lundi au samedi de 10h à 18h30</td>
+							<td>Le <?php echo $result['jours_ouv'];?> de  <?php echo $result['heure_ouverture'];?> à  <?php echo $result['heure_fermeture'];?></td>
 						</tr>
 						<tr>
 							<th>Site Web :</th> 
-							<td>http://handinglovetattoo.com/</td>
+							<td><?php echo $result['site'];?></td>
 						</tr>
 						<tr>
 							<th>Comment s'y rendre ? :</th>  
-							<td>Métro Ledru-Rollin Ligne 8</td>
+							<td><?php echo $result['trajet'];?></td>
 						</tr>
 					</tbody>
 				</table>
