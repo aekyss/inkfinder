@@ -89,28 +89,30 @@
 			<ul id="galerie_salon">
 				<h2 class="nom_tatoueurs">Tous les salons</h2>
 
-				<li class="mix color-1 check11 check21 check23 check25 check26 check27 option3"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></li>
+                <li class="mix color-1 check11 check21 check-asiatique check25 check26 check27 option3"><a href="page_perso_salon.php?id=2"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></a></li>
 
 				<!--<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/mysterytattoo.png" alt="Image 1"></li>
 
 
 				<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/starasian.png" alt="Image 1"></li>-->
 
-				<li class="mix color-1 check4 check22 check23 check28 radio2 option3"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></li>
+				<li class="mix color-1 check4 check-newschool check-asiatique check-tribal radio2 option3"><a href="page_perso_salon.php?id=1"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></a></li>
 
-				<li class="mix color-1 check4 check25 check29 radio2 option3"><img src="img/logo_salon/labetehumaine_logo.jpg" alt="Image 3"></li>
+                <li class="mix color-1 check4 check-réaliste check-bioméca radio2 option3"><a href="page_perso_salon.php?id=3"><img src="img/logo_salon/labetehumaine_logo.jpg" alt="Image 3"></a></li>
 
-				<li class="mix color-1 check15 check21 check22 check23 check24 check25 check27 check28  radio2 option3"><img src="img/logo_salon/mattattoo_logo.jpg" alt="Image 4"></li>
+                <li class="mix color-1 check15 check-oldschool check-newschool check-asiatique check-abstrait check-réaliste check-lettrage check-tribal  radio2 option3"><a href="page_perso_salon.php?id=4"><img src="img/logo_salon/mattattoo_logo.jpg" alt="Image 4"></a></li>
 
-				<li class="mix color-1 check2 check21 check22 check23 check24 check25 check26 check28 check29 radio2 option3"><img src="img/logo_salon/artcorpus_logo.jpg" alt="Image 5"></li>
+                <li class="mix color-1 check2 check-oldschool check-newschool check-asiatique check-abstrait check-réaliste check-dotwork check-tribal check-bioméca radio2 option3"><a href="page_perso_salon.php?id=5"><img src="img/logo_salon/artcorpus_logo.jpg" alt="Image 5"></a></li>
 
-				<li class="mix color-1 check11 check21 check24 radio2 option3"><img src="img/logo_salon/chezmeme_logo.jpg" alt="Image 6"></li>			
+                <li class="mix color-1 check11 check-oldschool check-abstrait radio2 option3"><a href="page_perso_salon.php?id=6"><img src="img/logo_salon/chezmeme_logo.jpg" alt="Image 6"></a></li>			
 
 			</ul>
 			<div class="cd-fail-message">No results found</div>
 		</section> <!-- cd-gallery -->
 
 		<div class="cd-filter">
+            
+       <?php include_once('search_s.php');?><!--recherche dans le BD - résultat retourné -->           
 			<form>
 				<div class="cd-filter-block">
 					<h4>Rechercher par arrondissement :</h4>
@@ -165,8 +167,8 @@
 						<ul class="cd-filter-content cd-filters list list3">
 							<li>
 
-								<input  class="filter" data-filter=".check21" type="checkbox" id="checkbox21"/>	
-								<label class="checkbox-label" for="checkbox21">
+								<input  class="filter" data-filter=".check-oldschool" type="checkbox" id="checkbox-oldschool"/>	
+								<label class="checkbox-label" for="checkbox-oldschool">
 
 									Oldschool
 
@@ -174,8 +176,8 @@
 
 							</li>
 							<li>	
-								<input  class="filter" data-filter=".check22" type="checkbox" id="checkbox22"/>	
-								<label class="checkbox-label" for="checkbox22">
+								<input  class="filter" data-filter=".check-newschool" type="checkbox" id="checkbox-newschool"/>	
+								<label class="checkbox-label" for="checkbox-newschool">
 
 									Newschool
 
@@ -184,8 +186,8 @@
 							</li>
 							<li>
 
-								<input  class="filter" data-filter=".check23" type="checkbox" id="checkbox23"/>	
-								<label class="checkbox-label" for="checkbox23">
+								<input  class="filter" data-filter=".check-asiatique" type="checkbox" id="checkbox-asiatique"/>	
+								<label class="checkbox-label" for="checkbox-asiatique">
 
 									Asiatique
 
@@ -195,8 +197,8 @@
 
 							<li>
 
-								<input  class="filter" data-filter=".check24" type="checkbox" id="checkbox24"/>	
-								<label class="checkbox-label" for="checkbox24">
+								<input  class="filter" data-filter=".check-abstrait" type="checkbox" id="checkbox-abstrait"/>	
+								<label class="checkbox-label" for="checkbox-abstrait">
 
 									Abstrait / Minimaliste
 
@@ -204,8 +206,8 @@
 
 							</li>
 							<li>	
-								<input  class="filter" data-filter=".check25" type="checkbox" id="checkbox25"/>	
-								<label class="checkbox-label" for="checkbox25">
+								<input  class="filter" data-filter=".check-réaliste" type="checkbox" id="checkbox-réaliste"/>	
+								<label class="checkbox-label" for="checkbox-réaliste">
 
 									Réaliste / Portrait
 
@@ -214,8 +216,8 @@
 							</li>
 							<li>
 
-								<input  class="filter" data-filter=".check26" type="checkbox" id="checkbox26"/>	
-								<label class="checkbox-label" for="checkbox26">
+								<input  class="filter" data-filter=".check-dotwork" type="checkbox" id="checkbox-dotwork"/>	
+								<label class="checkbox-label" for="checkbox-dotwork">
 
 									Dot Work
 
@@ -224,8 +226,8 @@
 							</li>
                             <li>
 
-								<input  class="filter" data-filter=".check27" type="checkbox" id="checkbox27"/>	
-								<label class="checkbox-label" for="checkbox27">
+								<input  class="filter" data-filter=".check-lettrage" type="checkbox" id="checkbox-lettrage"/>	
+								<label class="checkbox-label" for="checkbox-lettrage">
 
 									Lettrage
 
@@ -234,8 +236,8 @@
 							</li>
                             <li>
 
-								<input  class="filter" data-filter=".check28" type="checkbox" id="checkbox28"/>	
-								<label class="checkbox-label" for="checkbox28">
+								<input  class="filter" data-filter=".check-tribal" type="checkbox" id="checkbox-tribal"/>	
+								<label class="checkbox-label" for="checkbox-tribal">
 
 									Tribal
 
@@ -244,8 +246,8 @@
 							</li>
                             <li>
 
-								<input  class="filter" data-filter=".check29" type="checkbox" id="checkbox29"/>	
-								<label class="checkbox-label" for="checkbox29">
+								<input  class="filter" data-filter=".check-bioméca" type="checkbox" id="checkbox-bioméca"/>	
+								<label class="checkbox-label" for="checkbox-bioméca">
 
 									Biomécanique
 
