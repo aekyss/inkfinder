@@ -112,7 +112,7 @@
 		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
 		<ul class="description_salon">
 			<li class="logo_salon">
-				<figure><img src="img/logo_salon/handinglove_logo.jpg"></figure>
+				<figure><img src="img/logo_salon/<?php echo $result['logo']?>"/></figure>
 			</li>
 			<li class="info_salon">	
 				<table>
@@ -148,7 +148,7 @@
 		</ul>
 
 		<section class="description_tatoueur">
-			<h2 class="nom_tatoueurs">Les tatoueurs d'Hand In Glove</h2>
+			<h2 class="nom_tatoueurs">Les tatoueurs du salon "<?php echo $result['nom_salon']; ?>"</h2>
 			<ul class="grid">
 				<li>
 					<figure class="effect-julia">
