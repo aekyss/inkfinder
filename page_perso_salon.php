@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
 	<title>Hand In Glove</title>
 	<meta charset="utf-8">
@@ -102,9 +103,10 @@
 		</nav>
 	</header>
     <?php
-        include_once("connexion.inc");//connexion à la BD
+        include_once("connexion.inc");//connexion à la BD       
         $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
-        $result = $req->fetch();
+        $result = $req->fetch(); 
+        
     ?>
 	<section id="container">        
 		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
