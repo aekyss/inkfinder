@@ -1,7 +1,12 @@
+<?php
+    include_once("connexion.inc");//connexion à la BD       
+    $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
+    $result = $req->fetch(); 
+?>
 <!doctype html>
 <html lang="fr">
 <head>
-	<title>Hand In Glove</title>
+	<title><?= $result['nom_salon'] ?></title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -21,7 +26,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script>
 		function initialize() {
-			var myLatLng = {lat: 48.8522421, lng: 2.379231699999991};
+			var myLatLng = {lat: <?php echo $result['latitude']?>, lng: <?php echo $result['longitude']?>};
 
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 16,
@@ -36,7 +41,7 @@
 			var marker = new google.maps.Marker({
 				position: myLatLng,
 				map: map,
-				title: 'Hand In Glove',
+				title: '<?php echo $result['nom_salon']?>',
 				icon: image
 			});
 		}
@@ -102,12 +107,7 @@
 			</ul>
 		</nav>
 	</header>
-    <?php
-        include_once("connexion.inc");//connexion à la BD       
-        $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
-        $result = $req->fetch(); 
-        
-    ?>
+
 	<section id="container">        
 		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
 		<ul class="description_salon">
@@ -146,222 +146,44 @@
 
 			</li>
 		</ul>
-
+<?php         
+    $req = $bd->query("SELECT * FROM tatoueur WHERE id_salon =".$_GET['id']);   
+?>
 		<section class="description_tatoueur">
 			<h2 class="nom_tatoueurs">Les tatoueurs du salon "<?php echo $result['nom_salon']; ?>"</h2>
 			<ul class="grid">
+				<?php while($donnees = $req->fetch()){?>
 				<li>
 					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
+						<img src="img/tatoueur/<?php echo $donnees['photo']; ?>">
 						<figcaption>
-							<h2>Romain Pareja</h2>
+							<h2><?php echo $donnees['nom_tatoueur']; ?></h2>
 							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
+							<p><?php echo $donnees['style']; ?></p>
 						</figcaption>	
 					</figure>
-
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				
-
-			</ul>
+				</li>	
+				<?php }?>
+            </ul>
 		</section>
 
 
 		<section class="galerie_perso_salon">
-			<h2 class="nom_tatoueurs">Tatouages réalisés par Hand In Glove</h2>
+			<h2 class="nom_tatoueurs">Tatouages réalisés par <?php echo $result['nom_salon']; ?></h2>
 			<ul>
+				<?php
+				$req = $bd->query("SELECT * FROM tatouage WHERE id_salon =".$_GET['id']);   
+				while($photo = $req->fetch()){?>
 				<li>
 					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_1.png">
+						<img src="img/tatouage_salon/<?php echo $photo['image'];?>">
 					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_2.png">
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_3.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_4.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_5.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_1.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_2.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_3.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_4.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_5.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_1.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_2.png">
-					</figure>
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_3.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_4.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_5.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_1.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_2.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_3.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_4.png">
-					</figure>
-
-				</li>
-				<li>
-					<figure>
-						<img src="img/tatouage_salon/handinglove/tatouage_5.png">
-					</figure>
-
-				</li>
+				</li>	
+				<?php }?>
 			</ul>
 		</section>
 
-		<h2 class="nom_tatoueurs">Où se trouve vraiment Hand In Glove ?</h2>
+		<h2 class="nom_tatoueurs">Où se trouve vraiment <?php echo $result['nom_salon']; ?> ?</h2>
 		<div id="map"></div>
 
 	</section>
