@@ -1,5 +1,6 @@
 <?php
-    include_once("connexion.inc");//connexion à la BD       
+    include_once("connexion.inc");//connexion à la BD  
+    $bd->exec('SET NAMES utf8');
     $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
     $result = $req->fetch(); 
 ?>
