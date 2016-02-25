@@ -60,6 +60,8 @@
 .grid figure p {
 	letter-spacing: 1px;
 	font-size: 16px;
-	margin: 35% auto;
-
+	margin: 35% auto;    
+}
+.grid figure figcaption p{
+    width:200px;
 }

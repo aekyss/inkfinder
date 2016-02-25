@@ -160,7 +160,7 @@
 						<figcaption>
 							<h2><?php echo $donnees['nom_tatoueur']; ?></h2>
 							<h4>Voir styles</h4>
-							<p><?php echo $donnees['style']; ?></p>
+							<p><?php echo $donnees['style']."\n"; ?></p>
 						</figcaption>	
 					</figure>
 				</li>	
