@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
 	<title>Tous les salons</title>
 	<meta charset="utf-8">
@@ -89,7 +90,7 @@
 			<ul id="galerie_salon">
 				<h2 class="nom_tatoueurs">Tous les salons</h2>
 
-                <li class="mix color-1 check11 check21 check-asiatique check25 check26 check27 option3"><a href="page_perso_salon.php?id=2"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></a></li>
+                <li class="mix color-1 check11 check-lettrage check-asiatique check-oldschool check-réaliste check-dotwork option3"><a href="page_perso_salon.php?id=2"><img src="img/logo_salon/handinglove_logo.jpg" alt="Image 1"></a></li>
 
 				<!--<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/mysterytattoo.png" alt="Image 1"></li>
 

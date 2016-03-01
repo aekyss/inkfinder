@@ -1,6 +1,13 @@
-<html>
+<?php
+    include_once("connexion.inc");//connexion à la BD       
+    $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
+    $result = $req->fetch(); 
+
+?>
+<!doctype html>
+<html lang="fr">
 <head>
-	<title>Hand In Glove</title>
+	<title><?= $result['nom_salon'] ?></title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -101,16 +108,12 @@
 			</ul>
 		</nav>
 	</header>
-    <?php
-        include_once("connexion.inc");//connexion à la BD
-        $req = $bd->query("SELECT * FROM salon WHERE id =".$_GET['id']); 
-        $result = $req->fetch();
-    ?>
+
 	<section id="container">        
 		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
 		<ul class="description_salon">
 			<li class="logo_salon">
-				<figure><img src="img/logo_salon/handinglove_logo.jpg"></figure>
+				<figure><img src="img/logo_salon/<?php echo $result['logo']?>"/></figure>
 			</li>
 			<li class="info_salon">	
 				<table>
@@ -146,7 +149,7 @@
 		</ul>
 
 		<section class="description_tatoueur">
-			<h2 class="nom_tatoueurs">Les tatoueurs d'Hand In Glove</h2>
+			<h2 class="nom_tatoueurs">Les tatoueurs du salon "<?php echo $result['nom_salon']; ?>"</h2>
 			<ul class="grid">
 				<li>
 					<figure class="effect-julia">
@@ -168,70 +171,8 @@
 							<p>Réaliste/Japonais</p>
 						</figcaption>	
 					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				<li>
-					<figure class="effect-julia">
-						<img src="img/tatoueur/tatoueur.png">
-						<figcaption>
-							<h2>Romain Pareja</h2>
-							<h4>Voir styles</h4>
-							<p>Réaliste/Japonais</p>
-						</figcaption>	
-					</figure>
-				</li>
-				
-
-			</ul>
+				</li>            
+            </ul>
 		</section>
 
 

@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
 	<title>Galerie</title>
 	<meta charset="utf-8">
