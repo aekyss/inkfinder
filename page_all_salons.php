@@ -97,7 +97,7 @@
 
 				<li class="mix color-1 check12 radio2 option3"><img src="img/logo_salon/starasian.png" alt="Image 1"></li>-->
 
-				<li class="mix color-1 check4 check-newschool check-asiatique check-tribal radio2 option3"><a href="page_perso_salon.php?id=1"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></a></li>
+				<li class="mix color-1 check4 check-réaliste check-newschool check-asiatique check-tribal radio2 option3"><a href="page_perso_salon.php?id=1"><img src="img/logo_salon/abraxas_logo.jpg" alt="Image 2"></a></li>
 
                 <li class="mix color-1 check4 check-réaliste check-bioméca radio2 option3"><a href="page_perso_salon.php?id=3"><img src="img/logo_salon/labetehumaine_logo.jpg" alt="Image 3"></a></li>
 
