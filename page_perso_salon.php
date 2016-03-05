@@ -27,7 +27,7 @@
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script>
 		function initialize() {
-			var myLatLng = {lat: <?php echo $result['latitude']?>, lng: <?php echo $result['longitude']?>};
+			var myLatLng = {lat:<?php echo $result['latitude']?>, lng:<?php echo $result['longitude']?>};
 
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 16,
@@ -53,10 +53,10 @@
 <body>
 
 	<header>
-		<a href="index.php"><img id="logo" src="img/logo.png"></a>
+		<a href="ink-finder.php"><img id="logo" src="img/logo.png"></a>
 		<nav id="header_nav">
 			<ul id="menu_header">
-				<li ><a class="hvr-overline-reveal" href="index.php">Accueil</a></li>
+				<li ><a class="hvr-overline-reveal" href="ink-finder.php">Accueil</a></li>
 				<li ><a id="current" href="page_all_salons.php">Salon</a></li>
 				<li class="hvr-overline-reveal"><a href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>
@@ -160,7 +160,10 @@
 						<figcaption>
 							<h2><?php echo $donnees['nom_tatoueur']; ?></h2>
 							<h4>Voir styles</h4>
-							<p><?php echo $donnees['style']."\n"; ?></p>
+							<p><?php        
+                                $style = ($donnees['style']);
+                                                    
+                                echo $style."\n"; ?></p>
 						</figcaption>	
 					</figure>
 				</li>	

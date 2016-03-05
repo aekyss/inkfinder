@@ -20,10 +20,10 @@
 </head>
 <body>
 	<header>
-		<a href="index.php"><img id="logo" src="img/logo.png"></a>
+		<a href="ink-finder.php"><img id="logo" src="img/logo.png"></a>
 		<nav id="header_nav">
 			<ul id="menu_header">
-				<li ><a class="hvr-overline-reveal" href="index.php">Accueil</a></li>
+				<li ><a class="hvr-overline-reveal" href="ink-finder.php">Accueil</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>

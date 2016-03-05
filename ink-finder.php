@@ -20,10 +20,10 @@
 </head>
 <body>
 	<header>
-		<a href="index.html"><img id="logo" src="img/logo.png"></a>
+		<a href="ink-finder.php"><img id="logo" src="img/logo.png"></a>
 		<nav id="header_nav">
 			<ul id="menu_header">
-				<li id="current"><a href="index.html">Accueil</a></li>
+				<li id="current"><a href="ink-finder.php">Accueil</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>
@@ -151,7 +151,7 @@
 			<img src="img/article.png">
 			<figcaption>
 				<p>La culture tatouage s'invite à Montreuil les 17 et 18 octobre 2015 !</p>
-				<a href="">Voir l'article</a>
+				<a href="page_article.php">Voir l'article</a>
 			</figcaption>
 		</figure>
 	</section>
@@ -161,7 +161,7 @@
 			<img src="img/itw.png">
 			<figcaption>
 				<p>Tin-Tin nous raconte ses débuts dans une interview exclusive.</p>
-				<a href="">Voir l'article</a>
+				<a href="page_article.php">Voir l'article</a>
 			</figcaption>
 		</figure>
 	</section>
