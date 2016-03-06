@@ -7,7 +7,7 @@
 <!doctype html>
 <html lang="fr">
 <head>
-	<title><?= $result['nom_salon'] ?></title>
+	<title><?= $result['nom_salon']; ?></title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -27,7 +27,8 @@
 	<script src="https://maps.googleapis.com/maps/api/js"></script>
 	<script>
 		function initialize() {
-			var myLatLng = {lat:<?php echo $result['latitude']?>, lng:<?php echo $result['longitude']?>};
+			var myLatLng = {lat:<?php= $result['latitude'];?>,
+                            lng:<?php= $result['longitude'];?>};
 
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom: 16,
@@ -42,7 +43,7 @@
 			var marker = new google.maps.Marker({
 				position: myLatLng,
 				map: map,
-				title: '<?php echo $result['nom_salon']?>',
+				title: '<?php= $result['nom_salon'];?>',
 				icon: image
 			});
 		}
