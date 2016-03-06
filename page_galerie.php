@@ -103,7 +103,9 @@
 				$req = $bd->query("SELECT * FROM tatouage");   
 				while($photo = $req->fetch()){?>
 				<li class="mix check-<?php echo $photo['style']; ?>">
-					<img src="img/tatouage_salon/<?php echo $photo['image'];?>">
+					<a href="page_perso_salon.php?id=<?php echo $photo['id_salon'];?>">
+                        <img src="img/tatouage_salon/<?php echo $photo['image'];?>">
+                    </a>
                 </li>
 	           <?php }?>
                 
