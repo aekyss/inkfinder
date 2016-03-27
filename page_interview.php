@@ -1,7 +1,6 @@
-<!doctype html>
-<html lang="fr">
+<html>
 <head>
-	<title>Accueil</title>
+	<title>Interview</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon/favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -9,14 +8,16 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<link rel="stylesheet" type="text/css" href="css/content.css" />
-
-	<link rel="stylesheet" type="text/css" href="css/set2.css" />
-
 	<script type="text/javascript" src="js/modernizr.custom.js"></script>
 	<script type="text/javascript" src="js/uiMorphingButton_inflow.js"></script>
 	<script type="text/javascript" src="js/classie.js"></script>
 	<script type="text/javascript" src="js/uiMorphingButton_fixed.js"></script>
 	<script type="text/javascript" src="js/classie.js"></script>
+	<style type="text/css">
+		.question {
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 	<header>
@@ -26,8 +27,8 @@
 				<li id="current"><a href="ink-finder.php">Accueil</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_galerie.php">Galerie</a></li>
-				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>
-				<li ><a class="hvr-overline-reveal" href="page_info_pratique.php">Infos</a></li>
+				<li ><a class="hvr-overline-reveal" href="page_histoire.php">Histoire</a></li>
+				<li ><a class="hvr-overline-reveal" href="#">Infos</a></li>
 			</ul>
 			<ul id="log">
 				<li>
@@ -41,7 +42,7 @@
 										<h2>Connexion</h2>
 										<form>
 											<p><label>Email</label><input type="text" /></p>
-											<p><label>Mot de passe</label><input type="password" /></p>
+											<p><label>Password</label><input type="password" /></p>
 											<p><button>Se connecter</button></p>
 										</form>
 									</div>
@@ -59,109 +60,90 @@
 									<div class="content-style-form content-style-form-1">
 										<span class="icon icon-close">Fermer</span>
 										<h2>S'inscrire</h2>
-										<form action="inscription.php" method="post">
+										<form>
 											<p><label>Email</label><input type="text" /></p>
-											<p><label>Mot de passe</label><input type="password" /></p>
-											<p><input type="submit" name="submit" id="submit" value="s'inscrire"/></p>
+											<p><label>Password</label><input type="password" /></p>
+											<p><button>s'inscrire</button></p>
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</li>			
+				</li>
+
+				<!-- <li><a href="">Inscription</a></li> -->
 			</ul>
 		</nav>
 	</header>
-	<section id="search_sect">
-		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
-        	<?php
-					//si login ou mot de passe faux
-					if(isset($_GET['error']))
-						echo "<p>Remplissez le(s) champs manquant(s)</p><br/>\n";
-				?>
-		<form id="search_salon" action="page_all_salons.php" method="post">
-			<select name="arrond" class="styled_form styled_select white">
-                <option value="0">Arrondissement</option>
-				<option value="2">2eme arrondissement</option>
-				<option value="4">4eme arrondissment</option>
-                <option value="11">11eme arrondissment</option>
-                <option value="15">15eme arrondissment</option>
-			</select>
-			<select name="style" class="styled_form styled_select white">
-				<option value="vide">Style(s)</option>
-				<option value="tribal">Tribal</option>
-				<option value="asiatique">Asiatique</option>
-				<option value="dotwork">Dot Work</option>
-                <option value="oldschool">Old School</option>
-                <option value="newschool">New School</option>
-                <option value="lettrage">Lettrage</option>
-                <option value="réaliste">Réaliste/Portrait</option>
-                <option value="abstrait">Abstrait/Minimaliste</option>
-                <option value="bioméca">Biomécanique</option>
-            </select>
-			<input class="styled_form" type="text" id="text_form" placeholder="Tatoueur...">
-			<input class="styled_form" id="button" type="submit" value="Trouver un salon">
-		</form>   
-	</section>
-	<section id="new_salons">
-		<h4>Les derniers salons ajoutés :</h4>
-		<ul id="logo_salons" class="grid">
-			<li>
-				<figure class="effect-julia">
-					<img src="img/logo_salon/handinglove_logo.jpg">
-					<a href="page_perso_salon.html">
-						<figcaption>
-							<h4>Hand in Glove</h4>
-							<p>Voir fiche salon</p>
-						</figcaption>
-					</a>
-				</figure>
-			</li>
-			<li>
-				<figure class="effect-julia">
-					<img src="img/logo_salon/handinglove_logo.jpg">
-					<a href="page_perso_salon.html">
-						<figcaption>
-							<h4>Hand in Glove</h4>
-							<p>Voir fiche salon</p>
-						</figcaption>
-					</a>
-				</figure>
-			</li>
-			<li>
-				<figure class="effect-julia">
-					<img src="img/logo_salon/handinglove_logo.jpg">
-					<a href="page_perso_salon.html">
-						<figcaption>
-							<h4>Hand in Glove</h4>
-							<p>Voir fiche salon</p>
-						</figcaption>
-					</a>
-				</figure>
-			</li>
+	<section id="page_article">
+		<article>
+			<h1>Interview d'Armelle, tatoueuse de Chez Mémé</h1>
+			<figure id="illus_article">
+				<img src="img/armellestb.jpg">
+				<figcaption id="date_article">
+					<p>publié le 17 janvier 2016</p>
+				</figcaption>
+			</figure>
+			<div id="text_article">
+				<p class="question">Depuis combien de temps êtes-vous tatoueuse ?</p>
+				<p>Cela fait 4 ans.</p>
+				<p class="question">Qu’est-ce qui vous a poussé à faire ce boulot ?</p> 
+				<p>Je me faisais pas mal tatouer, et on m'a proposé un apprentissage. J'ai tenté et ça m'a beaucoup plu !</p>
 
-		</ul>
-	</section>
-	<section id="article">
-		<h4>L'article du jour : </h4>
-		<figure>
-			<img src="img/article.png">
-			<figcaption>
-				<p>La culture tatouage s'invite à Montreuil les 17 et 18 octobre 2015 !</p>
-				<a href="page_article.php">Voir l'article</a>
-			</figcaption>
-		</figure>
-	</section>
-	<section id="itw">
-		<h4>L'interview du jour :</h4>
-		<figure>
-			<img src="img/itw2.png">
-			<figcaption>
-				<p>Interview d'Armelle, tatoueuse de Chez Mémé</p>
-				<a href="page_interview.php">Voir l'article</a>
-			</figcaption>
-		</figure>
+				<p class="question">Comment avez-vous fait pour faire ce métier ?</p> 
+				<p>J'ai appris "sur le tas", avec un maître d'apprentissage qui m'a appris ce qu'il y avait à savoir, et m'a guidé. </p>
+				<p class="question">Comment définiriez-vous votre style ?</p> 
+				<p>Je fais de la gravure dans un style un peu vintage, un peu ancien.</p>
+
+				<p class="question">Quand avez-vous ouvert votre propre salon et pourquoi ?</p> 
+				<p>Nous avons ouvert Chez Mémé avec deux copines début Septembre 2014. On avait envie de tenter l'aventure d'avoir notre propre boîte, et on voulait travailler ensemble.</p>
+
+				<p class="question">Quels genres de clientèle avez-vous ?</p> 
+				<p>La clientèle est très variée... On reçoit tous les milieux et tous les âges (majeurs évidemment).</p>
+
+				<p class="question">Vous arrive-t-il de refuser des tatouages et pourquoi ?</p> 
+				<p>Oui, ça peut m'arriver quand ça ne correspond pas à ce que je fais, ou quand la personne est mineure.</p>
+
+				<p class="question">Que pensez vous du principe de notre application ?</p> 
+				<p>Je pense qu'elle peut être utile, étant donné l'offre qui a considérablement augmentée ces dernières années, les gens peuvent être un peu perdus. Il ne reste plus qu'à voir comment elle sera faite. Personnellement je me sers d'Instagram.</p>
+				<p class="question">Que prévoyez vous pour la suite ?</p> 
+				<p>Faire de la couleur.. Non je blague. Je prévois d'essayer de voyager un peu plus à l'étranger. </p>
+			</div>
+		</article>
+		<aside>
+			<h4>Les autres interviews</h4>
+			<figure class="autre_article">
+				<img style="background-color:#a40000; height:100px; width:100px; border:none;">
+				<figcaption class="titre_article">
+					<p>Titre de l'interview</p>
+				</figcaption>
+			</figure>
+			<figure class="autre_article">
+				<img style="background-color:#a40000; height:100px; width:100px;">
+				<figcaption class="titre_article">
+					<p>Titre de l'interview</p>
+				</figcaption>
+			</figure>
+			<h4 id="share">Partager l'interview</h4>
+			<ul class="share-buttons">
+				<li>
+					<a href="https://www.facebook.com/sharer/sharer.php?u=&t=Ink%20Finder" title="Share on Facebook" target="_blank">
+						<img src="img/share/Facebook.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://twitter.com/intent/tweet?source=&text=Ink%20Finder:%20" target="_blank" title="Tweet">
+						<img src="img/share/Twitter.png">
+					</a>
+				</li>
+				<li>
+					<a href="https://plus.google.com/share?url=" target="_blank" title="Share on Google+">
+						<img src="img/share/Google+.png">
+					</a>
+				</li> 
+			</ul>
+		</aside>
 	</section>
 	<footer>
 		<nav id="footer_nav">
@@ -182,12 +164,9 @@
 			<a href=""><img src="img/insta.png"></a>
 		</div>
 	</footer>
-
-
-
 	<script>
-		(function() {
-			var docElem = window.document.documentElement, didScroll, scrollPosition;
+	(function() {
+		var docElem = window.document.documentElement, didScroll, scrollPosition;
 				// trick to prevent scrolling when opening/closing button
 				function noScrollFn() {
 					window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
