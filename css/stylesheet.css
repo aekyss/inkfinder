@@ -614,9 +614,9 @@ figure.effect-julia:hover p {
 }
 
 ul.share-buttons {
-  list-style: none;
-  padding: 0;
-  text-align: center;
+	list-style: none;
+	padding: 0;
+	text-align: center;
 }
 
 a {
@@ -624,5 +624,69 @@ a {
 }
 
 ul.share-buttons li{
-  display: inline;
+	display: inline;
+}
+
+/*Page info pratique*/
+
+#info_prat{
+	width: 80%;
+	margin: 5% auto;
+}
+#info_prat .titre_info_prat{
+	border-bottom: 1px solid #a40000;
+	font-size: 30px;
+	font-weight: 400;
+	color: #a40000;
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+.faq_titre{
+	display: block;
+	padding: 16px 7px;
+	background-color: #a40000;
+	color: #fff;
+	border-radius: 7px;
+}
+
+#info_prat #faq section{
+	overflow: hidden;
+	height: 0;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	color: #212121;
+	background: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	transition: height .4s ease;
+}
+#info_prat #faq section p{
+	height: 70px;
+}
+#info_prat section ul{
+	list-style: circle;
+}
+
+#info_prat #soins section p{
+	font-family: 'Raleway', sans-serif;
+	color: #212121;
+	font-size: 16px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+#info_prat #soins h5{
+	color: #a40000;
+	width: 30%;
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	border-bottom: 1px solid #a40000;
+}
+#info_prat #soins ul{
+	list-style: disc;
+	margin-bottom: 40px;
+
+}
+#info_prat #soins ul li{
+	margin-top: 15px;
 }

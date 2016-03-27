@@ -1,3 +1,7 @@
+<?php
+    include_once("connexion.inc");//connexion à la BD  
+    $bd->exec('SET NAMES utf8');    
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,15 +17,9 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/content.css" /> 
-
-
 	<link rel="stylesheet" type="text/css" href="css/style2.css" /> 
 	<link rel="stylesheet" type="text/css" href="css/normalize_galerie.css" /> 
 	<link rel="stylesheet" type="text/css" href="css/demo_galerie.css" /> 
-
-
-
-
 
 
 	<script type="text/javascript" src="js/uiMorphingButton_inflow.js"></script>
@@ -100,42 +98,18 @@
 
 		<section class="cd-gallery">
 			<h2 class="nom_tatoueurs">La galerie de tatouage</h2>
-			<ul >
-				<li class="mix check5">
-					<img src="img/lettrage.png">
-				</li>
-
-
-				<li class="mix check6 "><img src="img/biomeca.png"></li>
-				<li class="mix check3 "><img src="img/dotwork.png"></li>
-
-				<li class="mix check4"><img src="img/oldschool.png"></li>
-				<li class="mix check2"><img src="img/realiste.png"></li>
-				<li class="mix check1"><img src="img/tribal.png"></li>
-
-				<li class="mix check5 "><img src="img/lettrage.png"></li>
-				<li class="mix check6 "><img src="img/biomeca.png"></li>
-				<li class="mix check3 "><img src="img/dotwork.png"></li>
-
-				<li class="mix check4"><img src="img/oldschool.png"></li>
-				<li class="mix check2"><img src="img/realiste.png"></li>
-				<li class="mix check1"><img src="img/tribal.png"></li>
-
-				<li class="mix check5 "><img src="img/lettrage.png"></li>
-				<li class="mix check6 "><img src="img/biomeca.png"></li>
-				<li class="mix check3 "><img src="img/dotwork.png"></li>
-
-				<li class="mix check4"><img src="img/oldschool.png"></li>
-				<li class="mix check2"><img src="img/realiste.png"></li>
-				<li class="mix check1"><img src="img/tribal.png"></li>
-
-				<li class="mix check2"><img src="img/realiste.png"></li>
-				<li class="mix check1"><img src="img/tribal.png"></li>
-
-
-
-
-				<li><!-- ... --></li>
+			<ul>
+                <?php
+				$req = $bd->query("SELECT * FROM tatouage");   
+				while($photo = $req->fetch()){?>
+				<li class="mix check-<?php echo $photo['style'];?>">
+                    <a class="expand" href="#">
+                        <img src="img/tatouage_salon/<?php echo $photo['image'];?>" alt="image">
+                        <span>blablabla</span>
+                  </a>
+                </li>
+	           <?php }?>
+                
 				<li class="gap"></li>
 			</ul>
 			<div class="cd-fail-message">No results found</div>
@@ -150,57 +124,87 @@
 						<ul class="cd-filter-content cd-filters list list3">
 							<li>
 
-								<input  class="filter" data-filter=".check1" type="checkbox" id="checkbox1"/>	
-								<label class="checkbox-label" for="checkbox1">
+								<input  class="filter" data-filter=".check-oldschool" type="checkbox" id="checkbox-oldschool"/>	
+								<label class="checkbox-label" for="checkbox-oldschool">
 
-									Tribal
+									Oldschool
 
 								</label>
 
 							</li>
 							<li>	
-								<input  class="filter" data-filter=".check2" type="checkbox" id="checkbox2"/>	
-								<label class="checkbox-label" for="checkbox2">
+								<input  class="filter" data-filter=".check-newschool" type="checkbox" id="checkbox-newschool"/>	
+								<label class="checkbox-label" for="checkbox-newschool">
 
-									Réaliste
+									Newschool
 
 								</label>
 
 							</li>
 							<li>
 
-								<input  class="filter" data-filter=".check3" type="checkbox" id="checkbox3"/>	
-								<label class="checkbox-label" for="checkbox3">
+								<input  class="filter" data-filter=".check-asiatique" type="checkbox" id="checkbox-asiatique"/>	
+								<label class="checkbox-label" for="checkbox-asiatique">
+
+									Asiatique
+
+								</label>
+
+							</li>
+
+							<li>
+
+								<input  class="filter" data-filter=".check-abstrait" type="checkbox" id="checkbox-abstrait"/>	
+								<label class="checkbox-label" for="checkbox-abstrait">
+
+									Abstrait / Minimaliste
+
+								</label>
+
+							</li>
+							<li>	
+								<input  class="filter" data-filter=".check-réaliste" type="checkbox" id="checkbox-réaliste"/>	
+								<label class="checkbox-label" for="checkbox-réaliste">
+
+									Réaliste / Portrait
+
+								</label>
+
+							</li>
+							<li>
+
+								<input  class="filter" data-filter=".check-dotwork" type="checkbox" id="checkbox-dotwork"/>	
+								<label class="checkbox-label" for="checkbox-dotwork">
 
 									Dot Work
 
 								</label>
 
 							</li>
+                            <li>
 
-							<li>
-
-								<input  class="filter" data-filter=".check4" type="checkbox" id="checkbox4"/>	
-								<label class="checkbox-label" for="checkbox4">
-
-									Old school
-
-								</label>
-
-							</li>
-							<li>	
-								<input  class="filter" data-filter=".check5" type="checkbox" id="checkbox5"/>	
-								<label class="checkbox-label" for="checkbox5">
+								<input  class="filter" data-filter=".check-lettrage" type="checkbox" id="checkbox-lettrage"/>	
+								<label class="checkbox-label" for="checkbox-lettrage">
 
 									Lettrage
 
 								</label>
 
 							</li>
-							<li>
+                            <li>
 
-								<input  class="filter" data-filter=".check6" type="checkbox" id="checkbox6"/>	
-								<label class="checkbox-label" for="checkbox6">
+								<input  class="filter" data-filter=".check-tribal" type="checkbox" id="checkbox-tribal"/>	
+								<label class="checkbox-label" for="checkbox-tribal">
+
+									Tribal
+
+								</label>
+
+							</li>
+                            <li>
+
+								<input  class="filter" data-filter=".check-biomécanique" type="checkbox" id="checkbox-biomécanique"/>	
+								<label class="checkbox-label" for="checkbox-biomécanique">
 
 									Biomécanique
 

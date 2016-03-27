@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="fr">
+<html>
 <head>
 	<title>Article</title>
 	<meta charset="utf-8">
@@ -89,13 +88,13 @@
 		<aside>
 			<h4>Les autres articles</h4>
 			<figure class="autre_article">
-				<img src="img/img.png">
+				<img style="background-color:#a40000; height:100px; width:100px;">
 				<figcaption class="titre_article">
 					<p>Titre de l'article</p>
 				</figcaption>
 			</figure>
 			<figure class="autre_article">
-				<img src="img/img.png">
+				<img style="background-color:#a40000; height:100px; width:100px;">
 				<figcaption class="titre_article">
 					<p>Titre de l'article</p>
 				</figcaption>
