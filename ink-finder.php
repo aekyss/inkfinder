@@ -51,8 +51,8 @@
                                 </button>
                             </div>
                         </div>
-                    <li>
-                <ul>
+                    </li>
+                </ul>
             <?php 
             }           
             
@@ -132,7 +132,7 @@
 					</div>
 				</li>			
 			</ul>
-            <?php }?>
+            <?php }?>                               
 		</nav>
 	</header>
 	<section id="search_sect">

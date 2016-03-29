@@ -30,6 +30,33 @@
 				<li ><a class="hvr-overline-reveal" href="page_histoire.php">Histoire</a></li>
 				<li ><a class="hvr-overline-reveal" href="#">Infos</a></li>
 			</ul>
+			<?php 
+            session_start();
+            if(isset($_SESSION['pseudo'])){?>
+                <ul id="log">
+                    <li>
+                        <div class='mockup-content'>
+                            <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
+                                <button type="button">
+                                    <?php echo $_SESSION['pseudo'];?>
+                                </button>
+                            </div>
+                        </div>
+                    <li>
+                    <li>
+                        <div class='mockup-content'>
+                            <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
+                                <button type="button">
+                                    <a href="deconnexion.php">Déconnexion</a>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            <?php 
+            }           
+            
+            else{?>
 			<ul id="log">
 				<li>
 					<div class="mockup-content">
@@ -40,10 +67,18 @@
 									<div class="content-style-form content-style-form-1">
 										<span class="icon icon-close">Fermer</span>
 										<h2>Connexion</h2>
-										<form>
-											<p><label>Email</label><input type="text" /></p>
-											<p><label>Password</label><input type="password" /></p>
-											<p><button>Se connecter</button></p>
+										<form action="ink-finder.php" method="post">
+											<p>
+                                                <label>Email</label>
+                                                <input type="email" name="email" required/>
+                                            </p>
+											<p>
+                                                <label>Mot de passe</label>
+                                                <input type="password" name ="password" required/>
+                                            </p>
+											<p>
+                                                <input type="submit" name="submit" id="submit" value="se connecter"/>
+                                            </p>
 										</form>
 									</div>
 								</div>
@@ -57,23 +92,47 @@
 							<button type="button">Inscription</button>
 							<div class="morph-content">
 								<div>
-									<div class="content-style-form content-style-form-1">
+									<div class="content-style-form content-style-form-1 inscription">
 										<span class="icon icon-close">Fermer</span>
 										<h2>S'inscrire</h2>
-										<form>
-											<p><label>Email</label><input type="text" /></p>
-											<p><label>Password</label><input type="password" /></p>
-											<p><button>s'inscrire</button></p>
+										<form action="inscription.php" method="post">
+											    <p>
+                                                    <label>Pseudo</label>
+                                                </p>
+                                                <input type="text" name="pseudo" required/>               
+                                                <p>
+                                                    <label>Mot de passe</label>
+                                                </p>
+                                                <input type="password" name="password" required/>                
+                                                <!--<p>
+                                                    <label>Confirmer le mot de passe</label>
+                                                </p>
+                                                <input type="password" name="mdp_c" id="mdp_c"/>  -->             
+                                                <p>
+                                                    <label>Email</label>
+                                                </p>
+                                                    <input type="email" name="email" required/>                
+                                                <p>
+                                                    <label>Sexe</label>
+                                                </p>
+                                                    Femme<input type="radio" name="femme"/>
+                                                    Homme<input type="radio" name="homme"/>               
+                                                <p>
+                                                    <label>Date de naissance (JJ/MM/AA)</label>
+                                                </p>
+                                                    <input type="date" name="date" required/>    
+											    <p>
+                                                     <input type="submit" name="submit" id="submit" value="s'inscrire"/>
+                                                </p>
 										</form>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</li>
-
-				<!-- <li><a href="">Inscription</a></li> -->
+				</li>			
 			</ul>
+            <?php }?> 
 		</nav>
 	</header>
 	<section id="page_article">

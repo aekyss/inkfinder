@@ -1,6 +1,7 @@
 <?php
-include_once("connexion.inc");//connexion à la BD
 if((isset($_POST['email'])) AND isset($_POST['password'])){
+include_once("connexion.inc");//connexion à la BD
+
 // Hachage du mot de passe
 $pass_hache = sha1($_POST['password']);
 
