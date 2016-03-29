@@ -210,9 +210,11 @@
 	background: transparent;
 	color: #a40000;
 	font-weight: 300;
-	font-size: 1.5em;
+	font-size: 2.5em;
 }
-
+.inscription input{
+    font-size:1.5em !important;
+}
 .content-style-form input[type="text"]:focus,
 .content-style-form input[type="password"]:focus {
 	border-color: #a40000;

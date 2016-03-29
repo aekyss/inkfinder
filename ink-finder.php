@@ -56,7 +56,7 @@
 							<button type="button">Inscription</button>
 							<div class="morph-content">
 								<div>
-									<div class="content-style-form content-style-form-1">
+									<div class="content-style-form content-style-form-1 inscription">
 										<span class="icon icon-close">Fermer</span>
 										<h2>S'inscrire</h2>
 										<form action="inscription.php" method="post">
