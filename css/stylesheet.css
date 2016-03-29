@@ -166,7 +166,7 @@ nav #menu_header a:visited{
 	border: none;
 }
 
-input[type="submit"] {
+#button {
 	width: 250px;
 	height: 30px;
 	border-radius: 5px;

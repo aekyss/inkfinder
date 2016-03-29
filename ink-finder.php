@@ -85,7 +85,7 @@
                                                     <label>Date de naissance (JJ/MM/AA)</label>
                                                 </p>
                                                     <input type="date" name="dn" id="dn"/>    
-											<p><input type="submit" name="submit" id="submit" class="styled_form" value="s'inscrire"/></p>
+											<p><input type="submit" name="submit" id="submit" value="s'inscrire"/></p>
 										</form>
 									</div>
 								</div>
@@ -124,7 +124,7 @@
                 <option value="bioméca">Biomécanique</option>
             </select>
 			<input class="styled_form" type="text" id="text_form" placeholder="Tatoueur...">
-			<input class="styled_form" type="submit" value="Trouver un salon">
+			<input class="styled_form" id="button" type="submit" value="Trouver un salon">
 		</form>   
 	</section>
 	<section id="new_salons">

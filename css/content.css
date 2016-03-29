@@ -223,7 +223,7 @@
 	outline: 0;
 }
 
-.content-style-form button {
+.content-style-form button, #submit {
 	display: block;
 	margin-top: 2.5em;
 	padding: 1.5em;
