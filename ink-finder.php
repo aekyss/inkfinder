@@ -63,11 +63,11 @@
 											    <p>
                                                     <label>Pseudo</label>
                                                 </p>
-                                                <input type="text" name="pseudo" id="pseudo"/>               
+                                                <input type="text" name="pseudo" required/>               
                                                 <p>
                                                     <label>Mot de passe</label>
                                                 </p>
-                                                <input type="password" name="password" id="password"/>                
+                                                <input type="password" name="password" required/>                
                                                 <!--<p>
                                                     <label>Confirmer le mot de passe</label>
                                                 </p>
@@ -75,17 +75,19 @@
                                                 <p>
                                                     <label>Email</label>
                                                 </p>
-                                                    <input type="email" name="email" id="email"/>                
+                                                    <input type="email" name="email" required/>                
                                                 <p>
                                                     <label>Sexe</label>
                                                 </p>
-                                                    Femme<input type="radio" name="femme" id="femme"/>
-                                                    Homme<input type="radio" name="homme" id="homme"/>               
+                                                    Femme<input type="radio" name="femme" checked/>
+                                                    Homme<input type="radio" name="homme"/>               
                                                 <p>
                                                     <label>Date de naissance (JJ/MM/AA)</label>
                                                 </p>
-                                                    <input type="date" name="dn" id="dn"/>    
-											<p><input type="submit" name="submit" id="submit" value="s'inscrire"/></p>
+                                                    <input type="date" name="date" required/>    
+											    <p>
+                                                     <input type="submit" name="submit" id="submit" value="s'inscrire"/>
+                                                </p>
 										</form>
 									</div>
 								</div>
