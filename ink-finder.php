@@ -29,6 +29,34 @@
 				<li ><a class="hvr-overline-reveal" href="#">Histoire</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_info_pratique.php">Infos</a></li>
 			</ul>
+            
+            <?php 
+            include_once("connexion.php");
+            if(isset($_SESSION['pseudo'])){?>
+                <ul id="log">
+                    <li>
+                        <div class='mockup-content'>
+                            <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
+                                <button type="button">
+                                    <?php echo $_SESSION['pseudo'];?>
+                                </button>
+                            </div>
+                        </div>
+                    <li>
+                    <li>
+                        <div class='mockup-content'>
+                            <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
+                                <button type="button">
+                                    <a href="deconnexion.php">Déconnexion</a>
+                                </button>
+                            </div>
+                        </div>
+                    <li>
+                <ul>
+            <?php 
+            }           
+            
+            else{?>
 			<ul id="log">
 				<li>
 					<div class="mockup-content">
@@ -39,7 +67,7 @@
 									<div class="content-style-form content-style-form-1">
 										<span class="icon icon-close">Fermer</span>
 										<h2>Connexion</h2>
-										<form action="connexion.php" method="post">
+										<form action="ink-finder.php" method="post">
 											<p>
                                                 <label>Email</label>
                                                 <input type="email" name="email" required/>
@@ -87,7 +115,7 @@
                                                 <p>
                                                     <label>Sexe</label>
                                                 </p>
-                                                    Femme<input type="radio" name="femme" checked/>
+                                                    Femme<input type="radio" name="femme"/>
                                                     Homme<input type="radio" name="homme"/>               
                                                 <p>
                                                     <label>Date de naissance (JJ/MM/AA)</label>
@@ -104,6 +132,7 @@
 					</div>
 				</li>			
 			</ul>
+            <?php }?>
 		</nav>
 	</header>
 	<section id="search_sect">

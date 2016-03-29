@@ -1,31 +1,24 @@
 <?php
 include_once("connexion.inc");//connexion à la BD
+if((isset($_POST['email'])) AND isset($_POST['password'])){
+// Hachage du mot de passe
+$pass_hache = sha1($_POST['password']);
 
-$req = $bd->prepare('SELECT email FROM utilisateur WHERE email = ?');
+$req = $bd->prepare('SELECT pseudo FROM utilisateur WHERE email = ? AND password = ?');
         //on execute la requete avec la variable rentré par l'utilisateur
-        $req->execute(array($_POST['email']));
+        $req->execute(array($_POST['email'], $pass_hache));
         $result = $req->fetch();
-       
-        //si result vide -> login inexistant dans bd
-        if($result == false)
-            //redirection vers la page index avec message
-             echo "<p>Ce login n'existe pas !</p><br/>\n";
-        
-        //si var pas vide -> login existant
-        else{
-            //vérification du mdp
-            $req = $bd->prepare('SELECT password FROM utilisateur WHERE email = ?');
-            $req->execute(array($_POST['email']));
-            $result = $req->fetch();
-            
-            if($_POST['password'] != $result[0])
-                echo"<p>Le mot de passe est incorrect !</p><br/>\n";
-                
-            else if($mdp == $result[0]){  
-                //on ouvre la session pour stocker le login du joueur
-                session_start();
-                $_SESSION['pseudo'] = $pseudo;                header("Location:http://localhost/pendu/ink-finder.php");//redirection vers le jeu       
-            }
-        }
-        $req->closeCursor();//termine le traitement 
+        //identification incorrecte
+    if(!$result){
+        echo "Mot de passe ou identifiant incorrecte \n";
+    }
+        //identification correcte
+    else {                
+        //on ouvre la session pour stocker le pseudo de l'utilisateur
+        session_start();
+        $_SESSION['pseudo'] = $result[0];    
+    }
+    
+    $req->closeCursor();//termine le traitement 
+}
 ?>
