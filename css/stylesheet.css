@@ -145,7 +145,7 @@ nav #menu_header a:visited{
 .styled_form {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
-	margin: 0 10px;
+	margin: 10px 10px;
 	height: 30px;
 	width: 200px;
 	background-color: #fff;
@@ -166,7 +166,7 @@ nav #menu_header a:visited{
 	border: none;
 }
 
-#search_sect #button {
+input[type="submit"] {
 	width: 250px;
 	height: 30px;
 	border-radius: 5px;
