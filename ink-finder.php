@@ -39,10 +39,18 @@
 									<div class="content-style-form content-style-form-1">
 										<span class="icon icon-close">Fermer</span>
 										<h2>Connexion</h2>
-										<form>
-											<p><label>Email</label><input type="text" /></p>
-											<p><label>Mot de passe</label><input type="password" /></p>
-											<p><button>Se connecter</button></p>
+										<form action="connexion.php" method="post">
+											<p>
+                                                <label>Email</label>
+                                                <input type="email" name="email" required/>
+                                            </p>
+											<p>
+                                                <label>Mot de passe</label>
+                                                <input type="password" name ="password" required/>
+                                            </p>
+											<p>
+                                                <input type="submit" name="submit" id="submit" value="se connecter"/>
+                                            </p>
 										</form>
 									</div>
 								</div>

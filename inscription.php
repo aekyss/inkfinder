@@ -28,9 +28,11 @@ if(isset($_POST['femme']))
 else if(isset($_POST['homme'])){
      $sexe = "H";
 }
+// Hachage du mot de passe
+$pass_hache = password($_POST['password']);
 
 $req = $bd->query("INSERT INTO `utilisateur`(`pseudo`,`mdp`,`email`,`sexe`,`date`) VALUES ('".
-                  $_POST['pseudo']."','".$_POST['password']."','".$_POST['email']."','".$sexe."','".$_POST['date']."')");
+                  $_POST['pseudo']."','".$pass_hache."','".$_POST['email']."','".$sexe."','".$_POST['date']."')");
 
 $req->closeCursor();
 
