@@ -30,7 +30,7 @@
 				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_histoire.php">Histoire</a></li>
-				<li ><a class="hvr-overline-reveal" href="#">Infos</a></li>
+				<li ><a class="hvr-overline-reveal" href="page_info_pratique.php">Infos</a></li>
 			</ul>
 			<?php 
             session_start();

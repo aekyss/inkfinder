@@ -28,13 +28,17 @@
 			</ul>
 			<?php 
             session_start();
-            if(isset($_SESSION['pseudo'])){?>
+            if(isset($_SESSION['pseudo'])){
+                $pseudo = $_SESSION['pseudo'];
+            ?>
                 <ul id="log">
                     <li>
                         <div class='mockup-content'>
                             <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
                                 <button type="button">
-                                    <?php echo $_SESSION['pseudo'];?>
+                                    <a href="profil.php?pseudo=<?php echo $pseudo; ?>">
+                                        <?= $pseudo; ?>
+                                    </a>
                                 </button>
                             </div>
                         </div>

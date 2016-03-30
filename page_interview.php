@@ -29,17 +29,21 @@
 				<li ><a class="hvr-overline-reveal" href="page_all_salons.php">Salon</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_galerie.php">Galerie</a></li>
 				<li ><a class="hvr-overline-reveal" href="page_histoire.php">Histoire</a></li>
-				<li ><a class="hvr-overline-reveal" href="#">Infos</a></li>
+				<li ><a class="hvr-overline-reveal" href="page_info_pratique.php">Infos</a></li>
 			</ul>
 			<?php 
             session_start();
-            if(isset($_SESSION['pseudo'])){?>
+            if(isset($_SESSION['pseudo'])){
+               $pseudo = $_SESSION['pseudo'];
+            ?>
                 <ul id="log">
                     <li>
                         <div class='mockup-content'>
                             <div class='morph-button morph-button-modal morph-button-modal-2 morph-button-fixed'>
                                 <button type="button">
-                                    <?php echo $_SESSION['pseudo'];?>
+                                    <a href="profil.php?pseudo=<?php echo $pseudo; ?>">
+                                        <?= $pseudo; ?>
+                                    </a>
                                 </button>
                             </div>
                         </div>
