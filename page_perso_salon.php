@@ -192,20 +192,40 @@
 						</tr>
 						<tr>
 							<th>Heures d'ouverture :</th>
-							<td>Le <?php echo $result['jours_ouv'];?> de  <?php echo $result['heure_ouverture'];?> à  <?php echo $result['heure_fermeture'];?></td>
+							<td><?php 
+                                if(!empty($result['jours_ouv']))                                   
+                                    echo "Le ".$result['jours_ouv'];
+                                
+                                if($result['heure_ouverture'] != "0.00" AND $result['heure_fermeture'] != "0.00")
+                                    echo "De ".$result['heure_ouverture']. " à ".$result['heure_fermeture'];
+                                else{
+                                   echo "Sur rendez-vous \n"; 
+                                }
+                                ?>
+                            </td>
 						</tr>
 						<tr>
 							<th>Site Web :</th> 
-							<td><?php echo $result['site'];?></td>
+							<td>
+                                <a href="<?= $result['site'];?>">
+                                <?php echo $result['site'];?>
+                                   </a>
+                            </td>
 						</tr>
 						<tr>
 							<th>Comment s'y rendre ? :</th>  
 							<td><?php echo $result['trajet'];?></td>
-						</tr>
-					</tbody>
+						</tr>                        
+					</tbody>                    
 				</table>
-
 			</li>
+            <li>
+                <button id="fav">
+                    <a href="favori.php?id=<?= $result['id']?>">                    
+                        Ajouter en favori
+                    </a>
+                </button>
+            </li>
 		</ul>
 <?php         
     $req = $bd->query("SELECT * FROM tatoueur WHERE id_salon =".$_GET['id']);   

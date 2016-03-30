@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
 	<title>Interview</title>
 	<meta charset="utf-8">

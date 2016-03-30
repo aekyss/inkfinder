@@ -224,19 +224,29 @@
 .content-style-form input:focus {
 	outline: 0;
 }
-
-.content-style-form button, #submit {
+.content-style-form button, #submit{
+    width: 100%;
+    margin-top: 2.5em;   
+    font-size: 1.25em;
+}
+#fav{
+   padding:1em;
+   font-size:1em;
+   text-align: center;
+}
+#fav a{
+    color: #fff !important;
+}
+.content-style-form button, #submit, #fav {
 	display: block;
-	margin-top: 2.5em;
-	padding: 1.5em;
-	width: 100%;
 	border: none;
 	background: #a40000;
 	color: #f9f6e5;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 800;
-	font-size: 1.25em;
+    padding: 1.5em;	
+	
 }
 
 .content-style-form .icon-close {

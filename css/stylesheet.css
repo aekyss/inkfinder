@@ -21,6 +21,7 @@ time, mark, audio, video {
 
 body {
 	font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
 }
 
 /*Header*/
@@ -33,7 +34,7 @@ body {
 header {
 	background-color: #ffeed7;
 	color: #000;
-	padding: 30px;
+	padding: 30px 0 30px 0;
 	font-size: 14px;
 	z-index: 3;
     position: fixed;
@@ -181,6 +182,9 @@ nav #menu_header a:visited{
 	background-color: #a40000;
 	border: none;
 	color: #fff;
+}
+button a{
+    color: #a40000 !important;
 }
 #search_sect #search_salon select:focus{
 	outline: none;
@@ -343,6 +347,7 @@ footer p {
 	font-family: 'Raleway', sans-serif;
 	color: #a40000;
 	font-weight: 600;
+    text-align: center;
 }
 #container .description_salon li {
 	display: inline-block;
@@ -395,6 +400,13 @@ footer p {
 	font-family: 'Raleway', sans-serif;
 	color: #424242;
 	font-weight: 600;
+}
+#container a{
+    color: #000;
+    font-weight:bold;
+}
+#container a:hover{
+    color:#a40000;
 }
 #container .description_salon li figure{
 	width: 100%;

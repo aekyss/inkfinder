@@ -1,4 +1,5 @@
-<html>
+<!doctype html>
+<html lang="fr">
 <head>
 	<title>Article</title>
 	<meta charset="utf-8">
