@@ -168,7 +168,7 @@
             <?php }?> 
 		</nav>
 	</header>
-
+    <div id="hidden-div"></div>
 	<section id="container">        
 		<h1 class="nom_salon"><?php echo $result['nom_salon']; ?></h1>
 		<ul class="description_salon">

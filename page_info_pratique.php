@@ -133,11 +133,8 @@
             <?php }?> 
 		</nav>
 	</header>
-
-
-
-
-	<section id="info_prat">
+    <div id="hidden-div"></div>
+    <section id="info_prat">
 		<section id="faq">
 			<h4 class="titre_info_prat">FAQ </h4>
 			<a href="#" class="faq_titre">combien ça coûte?</a>

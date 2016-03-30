@@ -24,12 +24,20 @@ body {
 }
 
 /*Header*/
+#hidden-div{
+    width:100%;
+    height:inherit;
+    padding:80px;
+    display: block;
+}
 header {
 	background-color: #ffeed7;
 	color: #000;
 	padding: 30px;
 	font-size: 14px;
 	z-index: 3;
+    position: fixed;
+    width:100%;    
 }
 
 header a {

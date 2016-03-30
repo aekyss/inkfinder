@@ -143,7 +143,7 @@
             <?php }?> 
 		</nav>
 	</header>
-
+    <div id="hidden-div"></div>
 	<main class="cd-main-content">
 		<div class="cd-tab-filter-wrapper">
 			<div class="cd-tab-filter">

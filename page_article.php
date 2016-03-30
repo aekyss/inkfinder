@@ -130,6 +130,7 @@
             <?php }?> 
 		</nav>
 	</header>
+    <div id="hidden-div"></div>
 	<section id="page_article">
 		<article>
 			<h1>Titre de l'article</h1>

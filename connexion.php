@@ -17,7 +17,8 @@ $req = $bd->prepare('SELECT pseudo FROM utilisateur WHERE email = ? AND password
     else {                
         //on ouvre la session pour stocker le pseudo de l'utilisateur
         session_start();
-        $_SESSION['pseudo'] = $result[0];    
+        $_SESSION['pseudo'] = $result[0];
+        header("Location: http://localhost/inkfinder/ink-finder.php");//redirection vers la page index
     }
     
     $req->closeCursor();//termine le traitement 

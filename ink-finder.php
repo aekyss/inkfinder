@@ -31,7 +31,7 @@
 			</ul>
             
             <?php 
-            include_once("connexion.php");
+             session_start();
             if(isset($_SESSION['pseudo'])){?>
                 <ul id="log">
                     <li>
@@ -67,7 +67,7 @@
 									<div class="content-style-form content-style-form-1">
 										<span class="icon icon-close">Fermer</span>
 										<h2>Connexion</h2>
-										<form action="ink-finder.php" method="post">
+										<form action="connexion.php" method="post">
 											<p>
                                                 <label>Email</label>
                                                 <input type="email" name="email" required/>
@@ -135,6 +135,7 @@
             <?php }?>                               
 		</nav>
 	</header>
+    <div id="hidden-div"></div>
 	<section id="search_sect">
 		<p>Ink finder vous aide dans la recherche d’un salon de tatouage parmi les meilleurs tatoueurs de la ville de Paris.</p>
         	<?php
